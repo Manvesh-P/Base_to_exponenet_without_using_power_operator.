@@ -1,0 +1,56 @@
+base = int(input("enter the base: "))
+expo = int(input("enter the exponent: "))
+
+res = 1
+
+if base >= 0 and expo >= 0:
+    while expo != 0:
+        res = res * base
+        expo -= 1
+
+    print("The base to the exponent is :%d"%res)
+
+elif base > 0 and expo < 0:
+    expo1 = -expo
+    while expo1 != 0:
+        res = res * base
+        expo1 -= 1
+    fres = 1 / res
+    print("The base to the exponent is :%f"%fres)
+
+elif base < 0 and expo < 0:
+    expo1 = -expo
+    base1 = -base
+    if expo1 % 2 == 0:
+        while expo1 != 0:
+            res = res * base1
+            expo1 -= 1
+        fres = 1 / res
+        print("The base to the exponent is :%f"%fres)
+
+    else:
+        while expo1 != 0:
+            res = res * base1
+            expo1 -= 1
+        res1 = 1 / res
+        fres = -res1
+        print("The abse to the exponent is :%f"%fres)
+
+elif base < 0 and expo > 0:
+    base1 = -base
+    if expo % 2 == 0:
+        while expo != 0:
+            res = res * base1
+            expo -= 1
+        print("The base to the exponent is :%d"%res)
+
+    else:
+        while expo != 0:
+            res = res * base1
+            expo -= 1
+        fres = -res
+        print("The bae to the exponent is %d"%fres)
+
+else:
+    pass
+
